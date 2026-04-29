@@ -197,11 +197,12 @@
       <div class="signup-card" id="signup">
         <h2>Join the Investor List</h2>
         <p class="sub">Free. Unsubscribe anytime. Deals only, no spam.</p>
-        <form name="investor-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <form name="investor-signup" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="investor-signup" />
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="lead_type" value="investor" />
           <input type="hidden" name="route_to" value="buyer-list" />
+          <input type="hidden" name="subject" value="New Investor Signup → Buyer List" />
           <input type="text" name="full_name" placeholder="Full name" required />
           <input type="email" name="email" placeholder="Email address" required />
           <input type="tel" name="phone" placeholder="Phone (for SMS deal alerts)" required />

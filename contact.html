@@ -217,11 +217,12 @@
       <div class="contact-form-card">
         <h2>Send us a message</h2>
         <p class="sub">Tell us about your property or question. We'll respond within 4 business hours.</p>
-        <form name="contact-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <form id="contact-form" name="contact-inquiry" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact-inquiry" />
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="lead_type" value="general-inquiry" />
           <input type="hidden" name="routing_strategy" value="route-by-reason-dropdown" />
+          <input type="hidden" id="contact-subject" name="subject" value="Contact: General Inquiry" />
           <div class="form-row">
             <div class="form-group">
               <label for="firstname">First name *</label>
@@ -244,15 +245,15 @@
           </div>
           <div class="form-group">
             <label for="reason">What can we help you with?</label>
-            <select id="reason" name="reason">
+            <select id="reason" name="reason" onchange="updateContactSubject(this.value)">
               <option value="">Select one...</option>
-              <option>I want a cash offer on my house</option>
-              <option>I'm interested in seller financing or subject-to</option>
-              <option>I'm a senior seller or family member (routes to Jas)</option>
-              <option>I'm a veteran / family of a veteran</option>
-              <option>I'm an investor — add me to the buyer list</option>
-              <option>I'm interested in a job opportunity</option>
-              <option>General question</option>
+              <option value="cash-offer">I want a cash offer on my house</option>
+              <option value="creative-finance">I'm interested in seller financing or subject-to</option>
+              <option value="senior">I'm a senior seller or family member (routes to Jas)</option>
+              <option value="veteran">I'm a veteran / family of a veteran</option>
+              <option value="investor">I'm an investor — add me to the buyer list</option>
+              <option value="career">I'm interested in a job opportunity</option>
+              <option value="general">General question</option>
             </select>
           </div>
           <div class="form-group">
@@ -266,6 +267,21 @@
           <button type="submit" class="form-submit">Send Message →</button>
           <div class="form-microcopy">By submitting, you consent to us contacting you by phone, text, or email. Your info is private and never sold.</div>
         </form>
+        <script>
+          var contactSubjectMap = {
+            'cash-offer':       'Contact: Cash Offer Request → Seller Leads',
+            'creative-finance': 'Contact: Creative Finance Inquiry → Seller Leads',
+            'senior':           'Contact: Senior Inquiry → Jas',
+            'veteran':          'Contact: Veteran Inquiry → General',
+            'investor':         'Contact: Investor Inquiry → Buyer List',
+            'career':           'Contact: Job Inquiry → HR Inbox',
+            'general':          'Contact: General Inquiry'
+          };
+          function updateContactSubject(val) {
+            document.getElementById('contact-subject').value =
+              contactSubjectMap[val] || 'Contact: General Inquiry';
+          }
+        </script>
       </div>
     </div>
   </div>

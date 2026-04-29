@@ -354,11 +354,12 @@
       <p style="font-size:17px;color:var(--gray-600);margin-top:12px;">We review every submission within 5 business days. If we're interested, we'll reach out to schedule a 15-minute intro call.</p>
     </div>
 
-    <form class="apply-form" name="career-application" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <form class="apply-form" name="career-application" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="career-application" />
       <input type="hidden" name="bot-field" />
       <input type="hidden" name="lead_type" value="career" />
       <input type="hidden" name="route_to" value="hr-inbox" />
+      <input type="hidden" name="subject" value="Career Application → HR Inbox" />
       <div class="form-row">
         <div class="form-group">
           <label for="fn">First name <span class="req">*</span></label>

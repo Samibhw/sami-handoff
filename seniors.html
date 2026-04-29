@@ -439,11 +439,12 @@
       <h2>Send a quick note to <span>Jas directly</span></h2>
       <p style="font-size:16px;color:var(--gray-600);">If this involves a senior seller or family decision, this form is routed to Jas first.</p>
     </div>
-    <form class="seniors-form-wrap" name="senior-inquiry-jas" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <form class="seniors-form-wrap" name="senior-inquiry-jas" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="senior-inquiry-jas" />
       <input type="hidden" name="bot-field" />
       <input type="hidden" name="lead_type" value="senior" />
       <input type="hidden" name="route_to" value="jas" />
+      <input type="hidden" name="subject" value="Senior Inquiry → Jas" />
       <div class="seniors-form-grid">
         <div>
           <label for="senior-name">Your name *</label>
