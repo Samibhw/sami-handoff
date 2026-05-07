@@ -146,14 +146,10 @@
   @media (max-width:800px){.footer-grid{grid-template-columns:1fr 1fr}}
   @media (max-width:500px){.footer-grid{grid-template-columns:1fr}}
 
-  .mockup-banner{position:fixed;bottom:20px;right:20px;background:var(--black);color:var(--white);padding:12px 20px;border-radius:999px;font-size:13px;font-weight:600;box-shadow:var(--shadow-xl);border:2px solid var(--red);z-index:1000}
-  .mockup-banner span{color:var(--red)}
 </style>
 <script src="analytics.js" defer></script>
 </head>
 <body>
-
-<div class="mockup-banner"><span>●</span> Mockup — For Investors</div>
 
 <header>
   <div class="container header-inner">
@@ -381,7 +377,7 @@
         <div class="faq-a"><p>Absolutely. We JV with wholesalers we trust. If you have a deal in Atlanta, Tulsa, Tampa Bay, or Seattle you want to move, contact Sachan (our Dispositions Manager) directly at <a href="tel:+18668833769" style="color:var(--red);font-weight:700;">(866) 883-3769</a> or submit the signup form and note "JV deal bringing" in the comments.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classless.toggle('open')">How do I unsubscribe?</div>
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How do I unsubscribe?</div>
         <div class="faq-a"><p>Reply STOP to any text message, or click unsubscribe on any email. You're out within 24 hours, no questions asked.</p></div>
       </div>
     </div>
